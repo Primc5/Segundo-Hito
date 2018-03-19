@@ -168,6 +168,11 @@
                         <color key="backgroundColor" red="0.4283516839" green="0.31476060839999997" blue="0.18282806169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnLogear" destination="JEo-iu-QAb" id="gea-I9-PRQ"/>
+                        <outlet property="txtfContraseña" destination="FpR-qD-UMp" id="WnW-cX-Kmd"/>
+                        <outlet property="txtfUsuario" destination="5Wt-bL-Vma" id="nSD-Zr-6zR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
