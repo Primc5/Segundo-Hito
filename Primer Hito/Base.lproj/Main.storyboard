@@ -141,7 +141,6 @@
                                 </state>
                                 <connections>
                                     <action selector="accionBotonLogear" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKU-0h-mvG"/>
-                                    <segue destination="h9x-y3-k5p" kind="show" id="5bC-Dc-dOZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xE2-9M-LuB">
@@ -178,9 +177,10 @@
                     </view>
                     <connections>
                         <outlet property="btnLogear" destination="JEo-iu-QAb" id="gea-I9-PRQ"/>
-                        <outlet property="txtfAConsola" destination="jjd-7I-cZx" id="0nu-Qq-h8i"/>
                         <outlet property="txtfContraseña" destination="FpR-qD-UMp" id="WnW-cX-Kmd"/>
                         <outlet property="txtfUsuario" destination="5Wt-bL-Vma" id="nSD-Zr-6zR"/>
+                        <outlet property="txtfVConsola" destination="jjd-7I-cZx" id="wNf-st-h3y"/>
+                        <segue destination="h9x-y3-k5p" kind="show" identifier="tran1" id="vLC-ae-TbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

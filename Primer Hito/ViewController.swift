@@ -26,9 +26,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func accionBotonLogear(){
-        txtfVConsola?.text=String(format:"HOLA MUNDO USUARIO: %@ PASSWORD: %@", (txtfUsuario?.text)!, (txtfContraseña?.text)!)
+        if txtfUsuario?.text=="yo" &&  txtfContraseña?.text=="12345" {
+            self.performSegue(withIdentifier: "tran1", sender: self)
+        }
+        else{
+            txtfVConsola?.text=String(format:"USUARIO: %@ CON PASSWORD: %@ NO ESTA REGISTRADO", (txtfUsuario?.text)!, (txtfContraseña?.text)!)
+        }
     }
-    
-
 }
 
