@@ -23,13 +23,34 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "micelda1")!
+        let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
+        //cell.lblNombre?.text="Yony"
+        if (indexPath.row==0) {
+            cell.lblNombre?.text="Alberto"
+        }
+        else if (indexPath.row==1){
+            cell.lblNombre?.text="Javi"
+        }
+        else if (indexPath.row==2){
+            cell.lblNombre?.text="Victor"
+        }
+        else if (indexPath.row==3){
+            cell.lblNombre?.text="Nacho"
+        }
+        else if (indexPath.row==4){
+            cell.lblNombre?.text="Alvaro"
+        }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("HE SELECCIONADO LA POSICION: %d ",indexPath.row);
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("HE DESELECCIONADO LA POSICION: %d ",indexPath.row);
+    }
 
     /*
     // MARK: - Navigation
