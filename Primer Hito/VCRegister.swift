@@ -7,9 +7,14 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class VCRegister: UIViewController {
-
+    
+    @IBOutlet var txtfEmail:UITextField?
+    @IBOutlet var txtfUsuario:UITextField?
+    @IBOutlet var txtfContraseña:UITextField?
+    @IBOutlet var txtfRepetirContraseña:UITextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +25,17 @@ class VCRegister: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func accionBotonRegistrar(){
+        //self.performSegue(withIdentifier: "trregistro", sender: self)
+        Auth.auth().createUser(withEmail: (txtfEmail?.text)!, password: (txtfContraseña?.text)!) { (user, error) in
+            if (error==nil){
+                self.performSegue(withIdentifier: "trregistro", sender: self)
+            }
+            else{
+                print("ERROR EN REGISTRO ", error!)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

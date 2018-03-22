@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class ViewController: UIViewController {
 
     @IBOutlet var btnLogear:UIButton?
@@ -26,11 +26,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func accionBotonLogear(){
+        /*
         if txtfUsuario?.text=="yo" &&  txtfContraseña?.text=="12345" {
             self.performSegue(withIdentifier: "tran1", sender: self)
         }
         else{
             txtfVConsola?.text=String(format:"USUARIO: %@ CON PASSWORD: %@ NO ESTA REGISTRADO", (txtfUsuario?.text)!, (txtfContraseña?.text)!)
+        }*/
+        Auth.auth().signIn(withEmail: (txtfUsuario?.text)!, password: (txtfContraseña?.text)!) { (user, error) in
+            if (error==nil){
+                self.performSegue(withIdentifier: "trregistro", sender: self)
+            }
+            else{
+                print("ERROR EN LOGEO ", error!)
+            }
         }
     }
 }
