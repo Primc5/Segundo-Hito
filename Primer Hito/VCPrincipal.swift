@@ -23,13 +23,13 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 5;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
         //cell.lblNombre?.text="Yony"
         if (indexPath.row==0) {
-            cell.lblNombre?.text="Alberto"
+            cell.lblNombre?.text="Yony"
         }
         else if (indexPath.row==1){
             cell.lblNombre?.text="Javi"
@@ -43,7 +43,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
         else if (indexPath.row==4){
             cell.lblNombre?.text="Alvaro"
         }
-        return cell
+        return cell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("HE SELECCIONADO LA POSICION: %d ",indexPath.row);

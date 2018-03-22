@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6526A5F52061780B00A7FB6F /* Android.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F32061780B00A7FB6F /* Android.png */; };
+		6526A5F72061783A00A7FB6F /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F62061783A00A7FB6F /* Apple.png */; };
+		6526A5F920617C6400A7FB6F /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6526A5F820617C6400A7FB6F /* DataHolder.swift */; };
 		654DA76120612F3900460BD6 /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DA76020612F3900460BD6 /* TVCMiCelda.swift */; };
+		654DA7652061465900460BD6 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DA7642061465900460BD6 /* VCColeccion.swift */; };
+		654DA767206159F800460BD6 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DA766206159F800460BD6 /* CVCMiCelda2.swift */; };
+		654ED7FA20626FDE00C1D1D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 654ED7F920626FDE00C1D1D5 /* GoogleService-Info.plist */; };
 		6563BD2C20600B0A0071AA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD2B20600B0A0071AA41 /* AppDelegate.swift */; };
 		6563BD2E20600B0A0071AA41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD2D20600B0A0071AA41 /* ViewController.swift */; };
 		6563BD3120600B0A0071AA41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6563BD2F20600B0A0071AA41 /* Main.storyboard */; };
@@ -15,10 +21,22 @@
 		6563BD3620600B0A0071AA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6563BD3420600B0A0071AA41 /* LaunchScreen.storyboard */; };
 		6563BD3E206029620071AA41 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3D206029620071AA41 /* VCRegister.swift */; };
 		6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3F20602C320071AA41 /* VCPrincipal.swift */; };
+		65E54BEB206286EB00150813 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E54BEA206286EB00150813 /* LocationAdmin.swift */; };
+		65E54BED2063D29900150813 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E54BEC2063D29900150813 /* MapKit.framework */; };
+		65E54BEF2063DC9B00150813 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E54BEE2063DC9B00150813 /* VCMapa.swift */; };
+		CE3B75838B51FA658D380B51 /* Pods_Primer_Hito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BB1C388D9EF379AE3B0DEC /* Pods_Primer_Hito.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14ACD1C3A78840C4761C8321 /* Pods-Primer Hito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer Hito.release.xcconfig"; path = "Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito.release.xcconfig"; sourceTree = "<group>"; };
+		39BB1C388D9EF379AE3B0DEC /* Pods_Primer_Hito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer_Hito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6526A5F32061780B00A7FB6F /* Android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Android.png; path = ../../Android.png; sourceTree = "<group>"; };
+		6526A5F62061783A00A7FB6F /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Apple.png; path = ../../Apple.png; sourceTree = "<group>"; };
+		6526A5F820617C6400A7FB6F /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		654DA76020612F3900460BD6 /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
+		654DA7642061465900460BD6 /* VCColeccion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
+		654DA766206159F800460BD6 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
+		654ED7F920626FDE00C1D1D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6563BD2820600B0A0071AA41 /* Primer Hito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Primer Hito.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6563BD2B20600B0A0071AA41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6563BD2D20600B0A0071AA41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +46,10 @@
 		6563BD3720600B0A0071AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6563BD3D206029620071AA41 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 		6563BD3F20602C320071AA41 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
+		65E54BEA206286EB00150813 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
+		65E54BEC2063D29900150813 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		65E54BEE2063DC9B00150813 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
+		C1C576AA45FF41E5F0022ADD /* Pods-Primer Hito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer Hito.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E54BED2063D29900150813 /* MapKit.framework in Frameworks */,
+				CE3B75838B51FA658D380B51 /* Pods_Primer_Hito.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57DDF517B7CC1808914201CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1C576AA45FF41E5F0022ADD /* Pods-Primer Hito.debug.xcconfig */,
+				14ACD1C3A78840C4761C8321 /* Pods-Primer Hito.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6563BD1F20600B0A0071AA41 = {
 			isa = PBXGroup;
 			children = (
 				6563BD2A20600B0A0071AA41 /* Primer Hito */,
 				6563BD2920600B0A0071AA41 /* Products */,
+				57DDF517B7CC1808914201CC /* Pods */,
+				81483A2510EF83A9AF1A1203 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +95,9 @@
 		6563BD2A20600B0A0071AA41 /* Primer Hito */ = {
 			isa = PBXGroup;
 			children = (
+				654ED7F920626FDE00C1D1D5 /* GoogleService-Info.plist */,
+				6526A5F62061783A00A7FB6F /* Apple.png */,
+				6526A5F32061780B00A7FB6F /* Android.png */,
 				6563BD2B20600B0A0071AA41 /* AppDelegate.swift */,
 				6563BD2D20600B0A0071AA41 /* ViewController.swift */,
 				6563BD2F20600B0A0071AA41 /* Main.storyboard */,
@@ -69,8 +107,22 @@
 				6563BD3D206029620071AA41 /* VCRegister.swift */,
 				6563BD3F20602C320071AA41 /* VCPrincipal.swift */,
 				654DA76020612F3900460BD6 /* TVCMiCelda.swift */,
+				654DA7642061465900460BD6 /* VCColeccion.swift */,
+				654DA766206159F800460BD6 /* CVCMiCelda2.swift */,
+				6526A5F820617C6400A7FB6F /* DataHolder.swift */,
+				65E54BEA206286EB00150813 /* LocationAdmin.swift */,
+				65E54BEE2063DC9B00150813 /* VCMapa.swift */,
 			);
 			path = "Primer Hito";
+			sourceTree = "<group>";
+		};
+		81483A2510EF83A9AF1A1203 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E54BEC2063D29900150813 /* MapKit.framework */,
+				39BB1C388D9EF379AE3B0DEC /* Pods_Primer_Hito.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6563BD3A20600B0A0071AA41 /* Build configuration list for PBXNativeTarget "Primer Hito" */;
 			buildPhases = (
+				DBC7DA63E4C1DC25583D146A /* [CP] Check Pods Manifest.lock */,
 				6563BD2420600B0A0071AA41 /* Sources */,
 				6563BD2520600B0A0071AA41 /* Frameworks */,
 				6563BD2620600B0A0071AA41 /* Resources */,
+				3CC9EF6EBE11E2449F38550C /* [CP] Embed Pods Frameworks */,
+				4020963F12EC9498FBCF9350 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -106,6 +161,14 @@
 					6563BD2720600B0A0071AA41 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -134,11 +197,72 @@
 			files = (
 				6563BD3620600B0A0071AA41 /* LaunchScreen.storyboard in Resources */,
 				6563BD3320600B0A0071AA41 /* Assets.xcassets in Resources */,
+				6526A5F72061783A00A7FB6F /* Apple.png in Resources */,
+				6526A5F52061780B00A7FB6F /* Android.png in Resources */,
 				6563BD3120600B0A0071AA41 /* Main.storyboard in Resources */,
+				654ED7FA20626FDE00C1D1D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CC9EF6EBE11E2449F38550C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4020963F12EC9498FBCF9350 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBC7DA63E4C1DC25583D146A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Primer Hito-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6563BD2420600B0A0071AA41 /* Sources */ = {
@@ -146,9 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6563BD2E20600B0A0071AA41 /* ViewController.swift in Sources */,
+				65E54BEF2063DC9B00150813 /* VCMapa.swift in Sources */,
+				65E54BEB206286EB00150813 /* LocationAdmin.swift in Sources */,
+				654DA767206159F800460BD6 /* CVCMiCelda2.swift in Sources */,
 				6563BD3E206029620071AA41 /* VCRegister.swift in Sources */,
+				6526A5F920617C6400A7FB6F /* DataHolder.swift in Sources */,
 				6563BD2C20600B0A0071AA41 /* AppDelegate.swift in Sources */,
 				654DA76120612F3900460BD6 /* TVCMiCelda.swift in Sources */,
+				654DA7652061465900460BD6 /* VCColeccion.swift in Sources */,
 				6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +413,7 @@
 		};
 		6563BD3B20600B0A0071AA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1C576AA45FF41E5F0022ADD /* Pods-Primer Hito.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +429,7 @@
 		};
 		6563BD3C20600B0A0071AA41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14ACD1C3A78840C4761C8321 /* Pods-Primer Hito.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

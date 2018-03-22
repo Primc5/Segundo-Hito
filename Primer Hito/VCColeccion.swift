@@ -8,7 +8,19 @@
 
 import UIKit
 
-class VCColeccion: UIViewController {
+class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int(DataHolder.sharedInstance.numeroCeldasColeccion);
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
+        cell.lblNombre?.text=DataHolder.sharedInstance.nombreDeCelda(numero: indexPath.row) as String
+        return cell;
+    }
+    
+    
+    @IBOutlet var colPrincipal:UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
