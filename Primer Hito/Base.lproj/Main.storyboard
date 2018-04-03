@@ -29,7 +29,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-b1-yXM">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-b1-yXM">
                                 <rect key="frame" x="92" y="332" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -57,7 +57,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I94-G3-tWs">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="I94-G3-tWs">
                                 <rect key="frame" x="92" y="236" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Oo-TT-20L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-465"/>
+            <point key="canvasLocation" x="308" y="-62"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -129,7 +129,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-bL-Vma">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-bL-Vma">
                                 <rect key="frame" x="92" y="276" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -148,7 +148,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-iu-QAb">
                                 <rect key="frame" x="16" y="617" width="114" height="30"/>
@@ -190,14 +190,14 @@
                         <outlet property="txtfContraseña" destination="FpR-qD-UMp" id="WnW-cX-Kmd"/>
                         <outlet property="txtfUsuario" destination="5Wt-bL-Vma" id="nSD-Zr-6zR"/>
                         <outlet property="txtfVConsola" destination="jjd-7I-cZx" id="wNf-st-h3y"/>
-                        <segue destination="h9x-y3-k5p" kind="show" identifier="trlogin" id="vLC-ae-TbC"/>
+                        <segue destination="Le1-Ht-eke" kind="show" identifier="trlogin" id="tsK-Cn-nJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-407.19999999999999" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="-404" y="-61"/>
         </scene>
-        <!--Principal-->
+        <!--Lista-->
         <scene sceneID="aet-Xd-B1w">
             <objects>
                 <viewController id="h9x-y3-k5p" customClass="VCPrincipal" customModule="Primer_Hito" customModuleProvider="target" sceneMemberID="viewController">
@@ -244,13 +244,14 @@
                         <color key="backgroundColor" red="0.4283516839" green="0.31476060839999997" blue="0.18282806169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lff-LV-IQb"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Lista" id="pGs-OY-dgr"/>
                     <connections>
                         <outlet property="tbMiTable" destination="ngM-cd-9LC" id="E4B-sm-EcL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJ8-QB-Axv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.80000000000001" y="277.51124437781112"/>
+            <point key="canvasLocation" x="308" y="624"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="pUx-ZA-yRN">
@@ -263,15 +264,35 @@
                             <outlet property="delegate" destination="cRK-LF-glY" id="Yo1-yj-fSP"/>
                         </connections>
                     </mapView>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="c3N-dW-dVV"/>
                     <connections>
                         <outlet property="miMapa" destination="aVd-zh-FPh" id="8l1-hQ-vTM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-Mg-iOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="278"/>
+            <point key="canvasLocation" x="1009" y="-62"/>
         </scene>
-        <!--Coleccion-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="ei8-zi-gR7">
+            <objects>
+                <tabBarController id="Le1-Ht-eke" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sqg-Sz-DcK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="h9x-y3-k5p" kind="relationship" relationship="viewControllers" id="swa-9Z-rO3"/>
+                        <segue destination="sgh-te-XoX" kind="relationship" relationship="viewControllers" id="60s-QS-ntt"/>
+                        <segue destination="cRK-LF-glY" kind="relationship" relationship="viewControllers" id="SGb-xp-0Ts"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giB-nG-D0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-404" y="624"/>
+        </scene>
+        <!--Tabla-->
         <scene sceneID="Ffb-3J-EvE">
             <objects>
                 <viewController id="sgh-te-XoX" customClass="VCColeccion" customModule="Primer_Hito" customModuleProvider="target" sceneMemberID="viewController">
@@ -325,19 +346,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8xT-jN-ECB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Tabla" id="eRs-tn-xxg"/>
                     <connections>
                         <outlet property="colPrincipal" destination="hMG-AS-ed0" id="oNv-87-TJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcj-VG-tuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-396"/>
+            <point key="canvasLocation" x="1009" y="624"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo-U-Tad" width="300" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SzL-7S-Zy1"/>
+        <segue reference="ZN8-Zz-1LJ"/>
     </inferredMetricsTieBreakers>
 </document>

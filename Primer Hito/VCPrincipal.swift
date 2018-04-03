@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,7 +16,14 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value, with: {
+            (snapshot) in
+            print("LO DESCARGADO ES: ",snapshot.value)
+            //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+        })
+        
         // Do any additional setup after loading the view.
     }
 
