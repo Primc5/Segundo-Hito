@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.42835168393782386" green="0.31476060839882208" blue="0.18282806170433771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="qdR-rj-uvG"/>
                     </view>
                     <connections>
@@ -107,11 +107,12 @@
                         <outlet property="txtfEmail" destination="I94-G3-tWs" id="keC-d0-TdD"/>
                         <outlet property="txtfRepetirContraseña" destination="wma-hZ-jhk" id="heN-3g-LKH"/>
                         <outlet property="txtfUsuario" destination="J1U-b1-yXM" id="YVV-9x-kT8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="trregistro" id="SzL-7S-Zy1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Oo-TT-20L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="-396"/>
+            <point key="canvasLocation" x="442" y="-465"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -121,7 +122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-lI-7yO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-lI-7yO">
                                 <rect key="frame" x="92" y="218" width="190" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -149,7 +150,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-iu-QAb" customClass="trregistro">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-iu-QAb">
                                 <rect key="frame" x="16" y="617" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
@@ -166,7 +167,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kTD-yu-53L" kind="show" id="F8K-Z3-Ke9"/>
+                                    <segue destination="kTD-yu-53L" kind="show" identifier="trregistro" id="91k-zb-liq"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jjd-7I-cZx">
@@ -181,7 +182,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.4283516839" green="0.31476060839999997" blue="0.18282806169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -189,7 +190,7 @@
                         <outlet property="txtfContraseña" destination="FpR-qD-UMp" id="WnW-cX-Kmd"/>
                         <outlet property="txtfUsuario" destination="5Wt-bL-Vma" id="nSD-Zr-6zR"/>
                         <outlet property="txtfVConsola" destination="jjd-7I-cZx" id="wNf-st-h3y"/>
-                        <segue destination="h9x-y3-k5p" kind="show" identifier="tran1" id="vLC-ae-TbC"/>
+                        <segue destination="h9x-y3-k5p" kind="show" identifier="trlogin" id="vLC-ae-TbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -254,7 +255,6 @@
         <!--Mapa-->
         <scene sceneID="pUx-ZA-yRN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-Mg-iOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cRK-LF-glY" customClass="VCMapa" customModule="Primer_Hito" customModuleProvider="target" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="aVd-zh-FPh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -267,8 +267,9 @@
                         <outlet property="miMapa" destination="aVd-zh-FPh" id="8l1-hQ-vTM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-Mg-iOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-407" y="688"/>
+            <point key="canvasLocation" x="1086" y="278"/>
         </scene>
         <!--Coleccion-->
         <scene sceneID="Ffb-3J-EvE">
@@ -330,10 +331,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcj-VG-tuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1351" y="-117"/>
+            <point key="canvasLocation" x="1086" y="-396"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo-U-Tad" width="300" height="138"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SzL-7S-Zy1"/>
+    </inferredMetricsTieBreakers>
 </document>
