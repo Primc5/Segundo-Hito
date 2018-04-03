@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6512A8492073E8DA0039DC3E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512A8482073E8DA0039DC3E /* Usuario.swift */; };
 		6526A5F52061780B00A7FB6F /* Android.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F32061780B00A7FB6F /* Android.png */; };
 		6526A5F72061783A00A7FB6F /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F62061783A00A7FB6F /* Apple.png */; };
 		6526A5F920617C6400A7FB6F /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6526A5F820617C6400A7FB6F /* DataHolder.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		14ACD1C3A78840C4761C8321 /* Pods-Primer Hito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer Hito.release.xcconfig"; path = "Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito.release.xcconfig"; sourceTree = "<group>"; };
 		39BB1C388D9EF379AE3B0DEC /* Pods_Primer_Hito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer_Hito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6512A8482073E8DA0039DC3E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		6526A5F32061780B00A7FB6F /* Android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Android.png; path = ../../Android.png; sourceTree = "<group>"; };
 		6526A5F62061783A00A7FB6F /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Apple.png; path = ../../Apple.png; sourceTree = "<group>"; };
 		6526A5F820617C6400A7FB6F /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				6526A5F820617C6400A7FB6F /* DataHolder.swift */,
 				65E54BEA206286EB00150813 /* LocationAdmin.swift */,
 				65E54BEE2063DC9B00150813 /* VCMapa.swift */,
+				6512A8482073E8DA0039DC3E /* Usuario.swift */,
 			);
 			path = "Primer Hito";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				654DA76120612F3900460BD6 /* TVCMiCelda.swift in Sources */,
 				654DA7652061465900460BD6 /* VCColeccion.swift in Sources */,
 				6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */,
+				6512A8492073E8DA0039DC3E /* Usuario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

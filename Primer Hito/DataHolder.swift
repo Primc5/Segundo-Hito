@@ -15,6 +15,7 @@ class DataHolder: NSObject {
     var numeroCeldasColeccion:UInt=5;
     var locationAdmin:LocationAdmin?
     var firDataBaseRef: DatabaseReference!
+    var arUsuarios:Array<Usuario>?
     
     func initFireBase(){
         FirebaseApp.configure()
