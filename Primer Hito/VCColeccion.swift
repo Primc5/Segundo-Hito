@@ -15,7 +15,26 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
-        cell.lblNombre?.text=DataHolder.sharedInstance.nombreDeCelda(numero: indexPath.row) as String
+        if (indexPath.row==0) {
+            cell.lblNombre?.text="Alberto"
+            cell.imgvMain?.image=UIImage(named: "Android.png")
+        }
+        else if (indexPath.row==1){
+            cell.lblNombre?.text="Javi"
+            cell.imgvMain?.image=UIImage(named: "Apple.png")
+        }
+        else if (indexPath.row==2){
+            cell.lblNombre?.text="Victor"
+            cell.imgvMain?.image=UIImage(named: "Android.png")
+        }
+        else if (indexPath.row==3){
+            cell.lblNombre?.text="Nacho"
+            cell.imgvMain?.image=UIImage(named: "Android.png")
+        }
+        else if (indexPath.row==4){
+            cell.lblNombre?.text="Alvaro"
+            cell.imgvMain?.image=UIImage(named: "Apple.png")
+        }
         return cell;
     }
     
