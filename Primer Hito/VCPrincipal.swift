@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate, DataHolderDelegate {
     
     @IBOutlet var tbMiTable:UITableView?
 
@@ -18,7 +18,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
         
         
-        DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
+    DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
             (snapshot) in
             let arTemp=snapshot.value as? Array<AnyObject>
             
@@ -37,7 +37,13 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate 
             //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
         })
         
+        DataHolder.sharedInstance.statusDataholder(delegate: self)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func DataHolderPruebaDataHolder(status: Int) {
+        print("-------->>> ",status)
     }
 
     override func didReceiveMemoryWarning() {

@@ -217,7 +217,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vl0-MT-oq4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Usuario" translatesAutoresizingMaskIntoConstraints="NO" id="Vl0-MT-oq4">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJ8-QB-Axv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="624"/>
+            <point key="canvasLocation" x="308" y="628"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="pUx-ZA-yRN">
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-Mg-iOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="-62"/>
+            <point key="canvasLocation" x="1026" y="-62"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ei8-zi-gR7">
@@ -290,7 +290,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giB-nG-D0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-404" y="624"/>
+            <point key="canvasLocation" x="-404" y="629"/>
         </scene>
         <!--Tabla-->
         <scene sceneID="Ffb-3J-EvE">
@@ -353,13 +353,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcj-VG-tuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="624"/>
+            <point key="canvasLocation" x="1025" y="627"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo-U-Tad" width="300" height="138"/>
+        <image name="Usuario" width="879" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZN8-Zz-1LJ"/>
+        <segue reference="SzL-7S-Zy1"/>
     </inferredMetricsTieBreakers>
 </document>

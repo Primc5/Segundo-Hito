@@ -8,26 +8,51 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class VCMapa: UIViewController, MKMapViewDelegate{
     
     @IBOutlet var miMapa:MKMapView?
-
+    var pines:[String:MKAnnotation]? = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         miMapa?.showsUserLocation = true
         
+    DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
+            (snapshot) in
+            let arTemp=snapshot.value as? Array<AnyObject>
+            
+            //if(DataHolder.sharedInstance.arUsuarios==nil){
+            DataHolder.sharedInstance.arUsuarios=Array<Usuario>()
+            //}
+            
+            for co in arTemp! as [AnyObject]{
+                let usuarioi=Usuario(valores: co as! [String:AnyObject])
+                DataHolder.sharedInstance.arUsuarios?.append(usuarioi)
+                var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
+                coordTemp.latitude = usuarioi.dbLat!
+                coordTemp.longitude = usuarioi.dbLong!
+                self.agregarPin(coordenada: coordTemp, titulo: usuarioi.sNombre!)
+            }
+        })
         //miMapa?.delegate = self
         // Do any additional setup after loading the view.
-        
+        /*
         var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
-        coordTemp.latitude = 40.4165000
-        coordTemp.longitude = -3.7025600
+        coordTemp.latitude = 40.540290
+        coordTemp.longitude = -3.893893
         agregarPin(coordenada: coordTemp, titulo: " PIN1 ")
         var coordTemp2:CLLocationCoordinate2D = CLLocationCoordinate2D()
-        coordTemp.latitude = 48.4165000
-        coordTemp.longitude = -4.7025600
+        coordTemp.latitude = 40.540288
+        coordTemp.longitude = -3.893893
         agregarPin(coordenada: coordTemp2, titulo: " PIN2 ")
+        var coordTemp3:CLLocationCoordinate2D = CLLocationCoordinate2D()
+        coordTemp.latitude = 40.540290
+        coordTemp.longitude = -3.893896
+        agregarPin(coordenada: coordTemp2, titulo: " PIN3 ")*/
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +61,18 @@ class VCMapa: UIViewController, MKMapViewDelegate{
     }
     
     func agregarPin(coordenada:CLLocationCoordinate2D, titulo varTitulo:String) {
-        let annotation:MKPointAnnotation = MKPointAnnotation()
+        var annotation:MKPointAnnotation = MKPointAnnotation()
+        
+        if (pines?[varTitulo] == nil) {
+            
+        }else{
+            annotation = pines?[varTitulo] as! MKPointAnnotation
+            miMapa?.removeAnnotation(annotation)
+        }
+        
         annotation.coordinate = coordenada
         annotation.title = varTitulo
+        pines?[varTitulo] = annotation
         miMapa?.addAnnotation(annotation)
     }
     

@@ -16,6 +16,8 @@ class DataHolder: NSObject {
     var locationAdmin:LocationAdmin?
     var firDataBaseRef: DatabaseReference!
     var arUsuarios:Array<Usuario>?
+    //var delegate:DataHolderDelegate?
+    
     
     func initFireBase(){
         FirebaseApp.configure()
@@ -24,4 +26,14 @@ class DataHolder: NSObject {
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
     }
+    func statusDataholder(delegate:DataHolderDelegate){
+        var i = 0
+        while i<1000000000 {
+            i += 1
+        }
+        delegate.DataHolderPruebaDataHolder!(status: 0)
+    }
+}
+@objc protocol DataHolderDelegate{
+    @objc optional func DataHolderPruebaDataHolder(status:Int)
 }
