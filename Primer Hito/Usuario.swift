@@ -15,12 +15,14 @@ class Usuario: NSObject {
     var sEmail:Character?
     var dbLat:Double?
     var dbLong:Double?
+    var sRutaImagenP:String?
     
     init (valores:[String:AnyObject]) {
-        sNombre=valores["Nombre"] as? String
-        sApellidos=valores["Apellidos"] as? String
-        sEmail=valores["Email"] as? Character
-        dbLat=valores["lat"] as? Double
-        dbLong=valores["long"] as? Double
+        sNombre = valores["Nombre"] as? String
+        sApellidos = valores["Apellidos"] as? String
+        sEmail = valores["Email"] as? Character
+        dbLat = valores["lat"] as? Double
+        dbLong = valores["long"] as? Double
+        sRutaImagenP = valores["RutaImagenP"] as? String
     }
 }

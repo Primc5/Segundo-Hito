@@ -20,6 +20,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
         
     DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
             (snapshot) in
+        print(snapshot)
             let arTemp=snapshot.value as? Array<AnyObject>
             
             //if(DataHolder.sharedInstance.arUsuarios==nil){
@@ -63,6 +64,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
         
         let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
         cell.lblNombre?.text=usuarioi.sNombre
+        cell.descargarImagen(ruta: usuarioi.sRutaImagenP!)
         //cell.lblNombre?.text="Yony"
         /*if (indexPath.row==0) {
             cell.lblNombre?.text="Yony"

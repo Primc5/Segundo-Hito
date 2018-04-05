@@ -9,19 +9,25 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
+
 class DataHolder: NSObject {
     
     static let sharedInstance:DataHolder=DataHolder()
     var numeroCeldasColeccion:UInt=5;
     var locationAdmin:LocationAdmin?
     var firDataBaseRef: DatabaseReference!
+    var firStorage:Storage?
     var arUsuarios:Array<Usuario>?
+    var firStorageRef:StorageReference?
     //var delegate:DataHolderDelegate?
     
     
     func initFireBase(){
         FirebaseApp.configure()
         firDataBaseRef = Database.database().reference()
+        firStorage = Storage.storage()
+        firStorageRef = firStorage?.reference()
     }
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
