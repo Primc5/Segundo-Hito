@@ -14,10 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet var txtfUsuario:UITextField?
     @IBOutlet var txtfContraseña:UITextField?
     @IBOutlet var txtfVConsola:UITextView?
+    @IBOutlet var uiswitchRecordar:UISwitch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        txtfUsuario?.text = DataHolder.sharedInstance.sUsuario
+        txtfContraseña?.text = DataHolder.sharedInstance.sPassword
+        
+        if (DataHolder.sharedInstance.sUsuario?.isEmpty)! {
+            logearse()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,14 +33,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func accionBotonLogear(){
-        if txtfUsuario?.text=="alberto" &&  txtfContraseña?.text=="12345" {
-            self.performSegue(withIdentifier: "trlogin", sender: self)
-        }
-        else{
-            txtfVConsola?.text=String(format:"El usuario %@ con la contraseña %@ no esta registrado", (txtfUsuario?.text)!, (txtfContraseña?.text)!)
-        }
+        logearse()
+    }
+    func logearse(){
         Auth.auth().signIn(withEmail: (txtfUsuario?.text)!, password: (txtfContraseña?.text)!) { (user, error) in
             if (error==nil){
+                if(self.uiswitchRecordar?.isOn)!{
+                    DataHolder.sharedInstance.sUsuario = self.txtfUsuario?.text
+                    DataHolder.sharedInstance.sPassword = self.txtfContraseña?.text
+                    DataHolder.sharedInstance.saveData()
+                }
                 self.performSegue(withIdentifier: "trlogin", sender: self)
             }
             else{
@@ -42,4 +51,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

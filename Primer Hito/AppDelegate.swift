@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         DataHolder.sharedInstance.initFireBase()
         DataHolder.sharedInstance.initLocationAdmin()
+        DataHolder.sharedInstance.loadData()
         return true
     }
 

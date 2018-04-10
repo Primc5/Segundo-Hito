@@ -21,8 +21,8 @@ class DataHolder: NSObject {
     var arUsuarios:Array<Usuario>?
     var firStorageRef:StorageReference?
     var hmImagenesDescargadas:[String:UIImage]?=[:]
-    //var delegate:DataHolderDelegate?
-    
+    var sUsuario:String?
+    var sPassword:String?
     
     func initFireBase(){
         FirebaseApp.configure()
@@ -30,9 +30,24 @@ class DataHolder: NSObject {
         firStorage = Storage.storage()
         firStorageRef = firStorage?.reference()
     }
+    
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
     }
+    
+    func loadData(){
+        let props = UserDefaults.standard
+        sUsuario = props.string(forKey: "usuario_login")
+        sPassword = props.string(forKey: "password_login")
+    }
+    
+    func saveData(){
+        let props = UserDefaults.standard
+        props.setValue(sUsuario, forKey: "usuario_login")
+        props.setValue(sPassword, forKey: "password_login")
+        props.synchronize()
+    }
+    
     func getImage(clave:String, getDelegate delegate:DataHolderDelegate){
         if(self.hmImagenesDescargadas?[clave] == nil){
             let islandRef = self.firStorageRef?.child(clave)
@@ -52,6 +67,11 @@ class DataHolder: NSObject {
             delegate.dataHolderImagenDescargada!(imagen:(self.hmImagenesDescargadas?[clave])!)
         }
     }
+    
+    func setDownloadedImage(clave:String, imagenDes image:UIImage){
+        hmImagenesDescargadas![clave]=image
+    }
+    
     func statusDataholder(delegate:DataHolderDelegate){
         var i = 0
         while i<1000000000 {
@@ -60,6 +80,7 @@ class DataHolder: NSObject {
         delegate.dataHolderPruebaDataHolder!(status: 0)
     }
 }
+
 @objc protocol DataHolderDelegate{
     @objc optional func dataHolderImagenDescargada(imagen:UIImage)
     @objc optional func dataHolderPruebaDataHolder(status:Int)

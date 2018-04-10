@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6512A8492073E8DA0039DC3E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512A8482073E8DA0039DC3E /* Usuario.swift */; };
-		6526A5F52061780B00A7FB6F /* Android.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F32061780B00A7FB6F /* Android.png */; };
-		6526A5F72061783A00A7FB6F /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6526A5F62061783A00A7FB6F /* Apple.png */; };
 		6526A5F920617C6400A7FB6F /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6526A5F820617C6400A7FB6F /* DataHolder.swift */; };
 		654DA76120612F3900460BD6 /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DA76020612F3900460BD6 /* TVCMiCelda.swift */; };
 		654DA7652061465900460BD6 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DA7642061465900460BD6 /* VCColeccion.swift */; };
@@ -22,6 +20,9 @@
 		6563BD3620600B0A0071AA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6563BD3420600B0A0071AA41 /* LaunchScreen.storyboard */; };
 		6563BD3E206029620071AA41 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3D206029620071AA41 /* VCRegister.swift */; };
 		6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3F20602C320071AA41 /* VCPrincipal.swift */; };
+		65E33496207CC494003B9405 /* Android.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33495207CC494003B9405 /* Android.png */; };
+		65E33498207CC49E003B9405 /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33497207CC49E003B9405 /* Apple.png */; };
+		65E3349A207CC4AD003B9405 /* Logo-U-Tad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33499207CC4AD003B9405 /* Logo-U-Tad.png */; };
 		65E54BEB206286EB00150813 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E54BEA206286EB00150813 /* LocationAdmin.swift */; };
 		65E54BED2063D29900150813 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E54BEC2063D29900150813 /* MapKit.framework */; };
 		65E54BEF2063DC9B00150813 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E54BEE2063DC9B00150813 /* VCMapa.swift */; };
@@ -32,8 +33,6 @@
 		14ACD1C3A78840C4761C8321 /* Pods-Primer Hito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primer Hito.release.xcconfig"; path = "Pods/Target Support Files/Pods-Primer Hito/Pods-Primer Hito.release.xcconfig"; sourceTree = "<group>"; };
 		39BB1C388D9EF379AE3B0DEC /* Pods_Primer_Hito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primer_Hito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6512A8482073E8DA0039DC3E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
-		6526A5F32061780B00A7FB6F /* Android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Android.png; path = ../../Android.png; sourceTree = "<group>"; };
-		6526A5F62061783A00A7FB6F /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Apple.png; path = ../../Apple.png; sourceTree = "<group>"; };
 		6526A5F820617C6400A7FB6F /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		654DA76020612F3900460BD6 /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
 		654DA7642061465900460BD6 /* VCColeccion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
@@ -48,6 +47,9 @@
 		6563BD3720600B0A0071AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6563BD3D206029620071AA41 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 		6563BD3F20602C320071AA41 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
+		65E33495207CC494003B9405 /* Android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Android.png; path = Assets.xcassets/Android.imageset/Android.png; sourceTree = "<group>"; };
+		65E33497207CC49E003B9405 /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Apple.png; path = Assets.xcassets/Apple.imageset/Apple.png; sourceTree = "<group>"; };
+		65E33499207CC4AD003B9405 /* Logo-U-Tad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo-U-Tad.png"; path = "Assets.xcassets/Logo-U-Tad.imageset/Logo-U-Tad.png"; sourceTree = "<group>"; };
 		65E54BEA206286EB00150813 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		65E54BEC2063D29900150813 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65E54BEE2063DC9B00150813 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
@@ -97,9 +99,10 @@
 		6563BD2A20600B0A0071AA41 /* Primer Hito */ = {
 			isa = PBXGroup;
 			children = (
+				65E33495207CC494003B9405 /* Android.png */,
 				655332F4207CA66200F13211 /* GoogleService-Info.plist */,
-				6526A5F62061783A00A7FB6F /* Apple.png */,
-				6526A5F32061780B00A7FB6F /* Android.png */,
+				65E33499207CC4AD003B9405 /* Logo-U-Tad.png */,
+				65E33497207CC49E003B9405 /* Apple.png */,
 				6563BD2B20600B0A0071AA41 /* AppDelegate.swift */,
 				6563BD2D20600B0A0071AA41 /* ViewController.swift */,
 				6563BD2F20600B0A0071AA41 /* Main.storyboard */,
@@ -198,12 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E33498207CC49E003B9405 /* Apple.png in Resources */,
 				6563BD3620600B0A0071AA41 /* LaunchScreen.storyboard in Resources */,
 				6563BD3320600B0A0071AA41 /* Assets.xcassets in Resources */,
-				6526A5F72061783A00A7FB6F /* Apple.png in Resources */,
-				6526A5F52061780B00A7FB6F /* Android.png in Resources */,
 				6563BD3120600B0A0071AA41 /* Main.storyboard in Resources */,
+				65E33496207CC494003B9405 /* Android.png in Resources */,
 				655332F5207CA66200F13211 /* GoogleService-Info.plist in Resources */,
+				65E3349A207CC4AD003B9405 /* Logo-U-Tad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

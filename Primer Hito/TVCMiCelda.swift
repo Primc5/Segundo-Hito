@@ -28,7 +28,6 @@ class TVCMiCelda: UITableViewCell,DataHolderDelegate {
     func descargarImagen(ruta:String){
         self.imgvPrincipal?.image=nil
         DataHolder.sharedInstance.getImage(clave: ruta, getDelegate: self)
-        
     }
     
     func dataHolderImagenDescargada(imagen: UIImage) {
