@@ -23,12 +23,15 @@ class DataHolder: NSObject {
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var sUsuario:String?
     var sPassword:String?
+    var firFirestore:Firestore?
+    var firFirestoreRef: DocumentReference?
     
     func initFireBase(){
         FirebaseApp.configure()
         firDataBaseRef = Database.database().reference()
         firStorage = Storage.storage()
         firStorageRef = firStorage?.reference()
+        firFirestore=Firestore.firestore()
     }
     
     func initLocationAdmin(){

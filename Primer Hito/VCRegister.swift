@@ -35,6 +35,17 @@ class VCRegister: UIViewController {
                 print("ERROR EN REGISTRO ", error!)
             }
         }
+        DataHolder.sharedInstance.firFirestoreRef = DataHolder.sharedInstance.firFirestore?.collection("Usuario").addDocument(data: [
+            "Email": txtfEmail?.text,
+            "Usuario": txtfUsuario?.text,
+            "Contraseña": txtfContraseña?.text
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(DataHolder.sharedInstance.firFirestoreRef!.documentID)")
+            }
+        }
     }
 
     /*
