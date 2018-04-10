@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseStorage
 
-class TVCMiCelda: UITableViewCell {
+class TVCMiCelda: UITableViewCell,DataHolderDelegate {
     
     @IBOutlet var lblNombre:UILabel?
     @IBOutlet var imgvPrincipal: UIImageView?
@@ -27,19 +27,11 @@ class TVCMiCelda: UITableViewCell {
     
     func descargarImagen(ruta:String){
         self.imgvPrincipal?.image=nil
-        // Create a reference to the file you want to download
-        let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)//storageRef.child(ruta)
+        DataHolder.sharedInstance.getImage(clave: ruta, getDelegate: self)
         
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        islandRef?.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if error != nil {
-                // Uh-oh, an error occurred!
-            } else {
-                // Data for "images/island.jpg" is returned
-                let image = UIImage(data: data!)
-                self.imgvPrincipal?.image = image
-            }
-        }
     }
-
+    
+    func dataHolderImagenDescargada(imagen: UIImage) {
+        self.imgvPrincipal?.image=imagen
+    }
 }

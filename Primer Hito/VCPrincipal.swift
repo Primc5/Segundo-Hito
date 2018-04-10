@@ -34,7 +34,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
             self.tbMiTable?.reloadData()
             //let Usuario0=Usuario(valores: arTemp?[0] as! [String : AnyObject])
             //let Usuarios0=arTemp?[0] as? [String:AnyObject]
-            print("EL USUARIO EN LA POSICION 0 ES: ", DataHolder.sharedInstance.arUsuarios)
+        print("EL USUARIO EN LA POSICION 0 ES: ", DataHolder.sharedInstance.arUsuarios!)
             //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
         })
         
@@ -43,7 +43,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
         // Do any additional setup after loading the view.
     }
     
-    func DataHolderPruebaDataHolder(status: Int) {
+    func dataHolderPruebaDataHolder(status: Int) {
         print("-------->>> ",status)
     }
 

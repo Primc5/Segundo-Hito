@@ -20,6 +20,7 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var arUsuarios:Array<Usuario>?
     var firStorageRef:StorageReference?
+    var hmImagenesDescargadas:[String:UIImage]?=[:]
     //var delegate:DataHolderDelegate?
     
     
@@ -32,14 +33,34 @@ class DataHolder: NSObject {
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
     }
+    func getImage(clave:String, getDelegate delegate:DataHolderDelegate){
+        if(self.hmImagenesDescargadas?[clave] == nil){
+            let islandRef = self.firStorageRef?.child(clave)
+            
+            islandRef?.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if error != nil {
+                    // Uh-oh, an error occurred!
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    self.hmImagenesDescargadas?[clave] = image
+                    delegate.dataHolderImagenDescargada!(imagen:image!)
+                }
+            }
+        }
+        else{
+            delegate.dataHolderImagenDescargada!(imagen:(self.hmImagenesDescargadas?[clave])!)
+        }
+    }
     func statusDataholder(delegate:DataHolderDelegate){
         var i = 0
         while i<1000000000 {
             i += 1
         }
-        delegate.DataHolderPruebaDataHolder!(status: 0)
+        delegate.dataHolderPruebaDataHolder!(status: 0)
     }
 }
 @objc protocol DataHolderDelegate{
-    @objc optional func DataHolderPruebaDataHolder(status:Int)
+    @objc optional func dataHolderImagenDescargada(imagen:UIImage)
+    @objc optional func dataHolderPruebaDataHolder(status:Int)
 }
