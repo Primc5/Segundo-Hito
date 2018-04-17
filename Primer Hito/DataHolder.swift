@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseFirestore
 
-class DataHolder: NSObject {
+class DataHolder: NSObject { 
     
     static let sharedInstance:DataHolder=DataHolder()
     var numeroCeldasColeccion:UInt=5;
@@ -21,17 +22,19 @@ class DataHolder: NSObject {
     var arUsuarios:Array<Usuario>?
     var firStorageRef:StorageReference?
     var hmImagenesDescargadas:[String:UIImage]?=[:]
-    var sUsuario:String?
-    var sPassword:String?
-    var firFirestore:Firestore?
-    var firFirestoreRef: DocumentReference?
+    var sUsuario:String = ""
+    var sPassword:String = ""
+    var iFechNac:String = ""
+    var dbLat:String = ""
+    var dbLong:String = ""
+    var firStoreDB:Firestore?
+    var usuario:Usuario = Usuario()
     
     func initFireBase(){
         FirebaseApp.configure()
         firDataBaseRef = Database.database().reference()
         firStorage = Storage.storage()
-        firStorageRef = firStorage?.reference()
-        firFirestore=Firestore.firestore()
+        firStoreDB=Firestore.firestore()
     }
     
     func initLocationAdmin(){
@@ -40,8 +43,8 @@ class DataHolder: NSObject {
     
     func loadData(){
         let props = UserDefaults.standard
-        sUsuario = props.string(forKey: "usuario_login")
-        sPassword = props.string(forKey: "password_login")
+        //sUsuario = props.string(forKey: "usuario_login")!
+        //sPassword = props.string(forKey: "password_login")!
     }
     
     func saveData(){

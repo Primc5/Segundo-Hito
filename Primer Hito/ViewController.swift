@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 class ViewController: UIViewController {
 
     @IBOutlet var btnLogear:UIButton?
@@ -19,12 +20,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        txtfUsuario?.text = DataHolder.sharedInstance.sUsuario
-        txtfContraseña?.text = DataHolder.sharedInstance.sPassword
         
-        if (DataHolder.sharedInstance.sUsuario?.isEmpty)! {
+        /*if (DataHolder.sharedInstance.sUsuario.isEmpty) {
             logearse()
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,17 +36,29 @@ class ViewController: UIViewController {
     }
     func logearse(){
         Auth.auth().signIn(withEmail: (txtfUsuario?.text)!, password: (txtfContraseña?.text)!) { (user, error) in
-            if (error==nil){
-                if(self.uiswitchRecordar?.isOn)!{
-                    DataHolder.sharedInstance.sUsuario = self.txtfUsuario?.text
-                    DataHolder.sharedInstance.sPassword = self.txtfContraseña?.text
-                    DataHolder.sharedInstance.saveData()
+            if user != nil {
+                
+                let ruta = DataHolder.sharedInstance.firStoreDB?.collection("Usuarios").document((user?.uid)!)
+                ruta?.getDocument{ (document, error) in
+                if document != nil{
+                    DataHolder.sharedInstance.usuario.setMap(valores:(document?.data())!)
+                    print(document?.data())
+                    self.performSegue(withIdentifier: "trlogin", sender: self)
                 }
-                self.performSegue(withIdentifier: "trlogin", sender: self)
+                else{
+                    print(error!)
+                }
+                /*if(self.uiswitchRecordar?.isOn)!{
+                    DataHolder.sharedInstance.sUsuario = (self.txtfUsuario?.text)!
+                    DataHolder.sharedInstance.sPassword = (self.txtfContraseña?.text)!
+                    DataHolder.sharedInstance.saveData()
+                     }
+                */
+                }
             }
-            else{
+            else {
                 print("ERROR EN LOGEO ", error!)
             }
         }
-    }
+}
 }

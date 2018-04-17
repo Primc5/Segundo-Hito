@@ -11,18 +11,29 @@ import UIKit
 class Usuario: NSObject {
     
     var sNombre:String?
-    var sApellidos:String?
-    var sEmail:Character?
-    var dbLat:Double?
-    var dbLong:Double?
+    var sEmail:String?
+    var bLat:Double?
+    var bLong:Double?
     var sRutaImagenP:String?
+    var iFechNac:String?
     
-    init (valores:[String:AnyObject]) {
+    func setMap (valores:[String:Any]) {
         sNombre = valores["Nombre"] as? String
-        sApellidos = valores["Apellidos"] as? String
-        sEmail = valores["Email"] as? Character
-        dbLat = valores["lat"] as? Double
-        dbLong = valores["long"] as? Double
+        sEmail = valores["Email"] as? String
+        bLat = valores["lat"] as? Double
+        bLong = valores["long"] as? Double
         sRutaImagenP = valores["RutaImagenP"] as? String
+        iFechNac = valores["sFechaNacimiento"] as? String
+        print(sNombre)
+    }
+    func getMap () -> [String:Any]{
+        var mapTemp:[String:Any] = [:]
+        mapTemp ["Email"] = sEmail as Any
+        mapTemp ["Nombre"] = sNombre as Any
+        mapTemp ["RutaImagenP"] = sRutaImagenP as Any
+        mapTemp ["sFechaNacimiento"] = iFechNac as Any
+        mapTemp ["lat"] = bLat as Any
+        mapTemp ["long"] = bLong as Any
+        return mapTemp
     }
 }

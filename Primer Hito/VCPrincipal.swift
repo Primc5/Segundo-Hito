@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseFirestore
 
 class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate, DataHolderDelegate {
     
@@ -27,10 +28,11 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
                 DataHolder.sharedInstance.arUsuarios=Array<Usuario>()
             //}
             
-            for co in arTemp! as [AnyObject]{
+            /*for co in arTemp! as [AnyObject]{
                 let usuarioi=Usuario(valores: co as! [String:AnyObject])
                 DataHolder.sharedInstance.arUsuarios?.append(usuarioi)
             }
+ */
             self.tbMiTable?.reloadData()
             //let Usuario0=Usuario(valores: arTemp?[0] as! [String : AnyObject])
             //let Usuarios0=arTemp?[0] as? [String:AnyObject]

@@ -8,16 +8,24 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+
 class VCRegister: UIViewController {
     
     @IBOutlet var txtfEmail:UITextField?
     @IBOutlet var txtfUsuario:UITextField?
+    @IBOutlet var iFechaNac:UITextField?
     @IBOutlet var txtfContraseña:UITextField?
     @IBOutlet var txtfRepetirContraseña:UITextField?
+    @IBOutlet var dLat:UITextField?
+    @IBOutlet var dLong:UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        txtfUsuario?.text = DataHolder.sharedInstance.sUsuario
+        iFechaNac?.text = DataHolder.sharedInstance.iFechNac
+        dLat?.text = DataHolder.sharedInstance.dbLat
+        dLong?.text = DataHolder.sharedInstance.dbLong
         // Do any additional setup after loading the view.
     }
 
@@ -26,24 +34,20 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func accionBotonRegistrar(){
-        //self.performSegue(withIdentifier: "trregistro", sender: self)
+        DataHolder.sharedInstance.usuario.sEmail = txtfEmail?.text
+        DataHolder.sharedInstance.usuario.sNombre = txtfUsuario?.text
+        DataHolder.sharedInstance.usuario.iFechNac = iFechaNac?.text
+        DataHolder.sharedInstance.usuario.sRutaImagenP = "Android.png"
+        DataHolder.sharedInstance.usuario.bLat = Double("dLat?.text")
+        DataHolder.sharedInstance.usuario.bLong = Double("dLong?.text")
         Auth.auth().createUser(withEmail: (txtfEmail?.text)!, password: (txtfContraseña?.text)!) { (user, error) in
-            if (error==nil){
+            if user != nil {
+                print("TE REGISTRASTE")
+            DataHolder.sharedInstance.firStoreDB?.collection("Usuarios").document((user?.uid)!).setData(DataHolder.sharedInstance.usuario.getMap())
                 self.performSegue(withIdentifier: "trregistro", sender: self)
             }
-            else{
+           else{
                 print("ERROR EN REGISTRO ", error!)
-            }
-        }
-        DataHolder.sharedInstance.firFirestoreRef = DataHolder.sharedInstance.firFirestore?.collection("Usuario").addDocument(data: [
-            "Email": txtfEmail?.text,
-            "Usuario": txtfUsuario?.text,
-            "Contraseña": txtfContraseña?.text
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(DataHolder.sharedInstance.firFirestoreRef!.documentID)")
             }
         }
     }

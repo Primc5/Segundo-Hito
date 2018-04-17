@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import FirebaseFirestore
 
 class VCMapa: UIViewController, MKMapViewDelegate{
     
@@ -26,15 +27,15 @@ class VCMapa: UIViewController, MKMapViewDelegate{
             //if(DataHolder.sharedInstance.arUsuarios==nil){
             DataHolder.sharedInstance.arUsuarios=Array<Usuario>()
             //}
-            
-            for co in arTemp! as [AnyObject]{
-                let usuarioi=Usuario(valores: co as! [String:AnyObject])
-                DataHolder.sharedInstance.arUsuarios?.append(usuarioi)
+            /*
+            for co in DataHolder.sharedInstance.arUsuario{
+                let usuario=Usuario()
                 var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
-                coordTemp.latitude = usuarioi.dbLat!
-                coordTemp.longitude = usuarioi.dbLong!
-                self.agregarPin(coordenada: coordTemp, titulo: usuarioi.sNombre!)
+                coordTemp.latitude = usuario.bLat!
+                coordTemp.longitude = usuario.bLong!
+                self.agregarPin(coordenada: coordTemp, titulo: usuario.sNombre!)
             }
+            */
         })
         //miMapa?.delegate = self
         // Do any additional setup after loading the view.
