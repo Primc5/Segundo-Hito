@@ -9,31 +9,42 @@
 import UIKit
 
 class Usuario: NSObject {
+    let IDEmail = "Email"
+    let IDNombre = "Nombre"
+    let IDRutaImagenP = "RutaImagenP"
+    let IDsFechaNacimiento = "sFechaNacimiento"
+    let IDlat = "lat"
+    let IDlong = "long"
+    let IDVerificado = "Verificado"
     
+    var sID:String?
     var sNombre:String?
     var sEmail:String?
     var bLat:Double?
     var bLong:Double?
     var sRutaImagenP:String?
     var iFechNac:String?
+    var bVerificado:Bool?
     
     func setMap (valores:[String:Any]) {
-        sNombre = valores["Nombre"] as? String
-        sEmail = valores["Email"] as? String
-        bLat = valores["lat"] as? Double
-        bLong = valores["long"] as? Double
-        sRutaImagenP = valores["RutaImagenP"] as? String
-        iFechNac = valores["sFechaNacimiento"] as? String
-        print(sNombre)
+        sNombre = valores[IDNombre] as? String
+        sEmail = valores[IDEmail] as? String
+        bLat = valores[IDlat] as? Double
+        bLong = valores[IDlong] as? Double
+        sRutaImagenP = valores[IDRutaImagenP] as? String
+        iFechNac = valores[IDsFechaNacimiento] as? String
+        bVerificado = valores[IDsFechaNacimiento] as? Bool
+        //print(sNombre)
     }
     func getMap () -> [String:Any]{
         var mapTemp:[String:Any] = [:]
-        mapTemp ["Email"] = sEmail as Any
-        mapTemp ["Nombre"] = sNombre as Any
-        mapTemp ["RutaImagenP"] = sRutaImagenP as Any
-        mapTemp ["sFechaNacimiento"] = iFechNac as Any
-        mapTemp ["lat"] = bLat as Any
-        mapTemp ["long"] = bLong as Any
+        mapTemp [IDEmail] = sEmail as Any
+        mapTemp [IDNombre] = sNombre as Any
+        mapTemp [IDRutaImagenP] = sRutaImagenP as Any
+        mapTemp [IDsFechaNacimiento] = iFechNac as Any
+        mapTemp [IDlat] = bLat as Any
+        mapTemp [IDlong] = bLong as Any
+        mapTemp [IDVerificado] = bVerificado as Any
         return mapTemp
     }
 }

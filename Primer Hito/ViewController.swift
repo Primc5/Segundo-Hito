@@ -42,7 +42,7 @@ class ViewController: UIViewController {
                 ruta?.getDocument{ (document, error) in
                 if document != nil{
                     DataHolder.sharedInstance.usuario.setMap(valores:(document?.data())!)
-                    print(document?.data())
+                    
                     self.performSegue(withIdentifier: "trlogin", sender: self)
                 }
                 else{

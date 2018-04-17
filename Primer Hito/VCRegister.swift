@@ -38,6 +38,7 @@ class VCRegister: UIViewController {
         DataHolder.sharedInstance.usuario.sNombre = txtfUsuario?.text
         DataHolder.sharedInstance.usuario.iFechNac = iFechaNac?.text
         DataHolder.sharedInstance.usuario.sRutaImagenP = "Android.png"
+        DataHolder.sharedInstance.usuario.bVerificado = true
         DataHolder.sharedInstance.usuario.bLat = Double("dLat?.text")
         DataHolder.sharedInstance.usuario.bLong = Double("dLong?.text")
         Auth.auth().createUser(withEmail: (txtfEmail?.text)!, password: (txtfContraseña?.text)!) { (user, error) in

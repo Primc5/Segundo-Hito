@@ -12,14 +12,59 @@ import FirebaseDatabase
 import FirebaseFirestore
 
 class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate, DataHolderDelegate {
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return self.arUsuarios.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
+        cell.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
+        cell.descargarImagen(ruta: arUsuarios[indexPath.row].sRutaImagenP!)
+        /* let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
+        cell.lblNombre?.text=usuarioi.sNombre
+         */
+        //cell.lblNombre?.text="Yony"
+        /*if (indexPath.row==0) {
+         cell.lblNombre?.text="Yony"
+         }
+         else if (indexPath.row==1){
+         cell.lblNombre?.text="Javi"
+         }
+         else if (indexPath.row==2){
+         cell.lblNombre?.text="Victor"
+         }
+         else if (indexPath.row==3){
+         cell.lblNombre?.text="Nacho"
+         }
+         else if (indexPath.row==4){
+         cell.lblNombre?.text="Alvaro"
+         }*/
+        return cell;
+    }
     @IBOutlet var tbMiTable:UITableView?
-
+    var arUsuarios:[Usuario] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
+        DataHolder.sharedInstance.firStoreDB?.collection("Usuarios").whereField("Verificado", isEqualTo: true).addSnapshotListener { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.arUsuarios=[]
+                    for document in querySnapshot!.documents {
+                        
+                        let usuario:Usuario = Usuario()
+                        usuario.sID=document.documentID
+                        usuario.setMap(valores: document.data())
+                        self.arUsuarios.append(usuario)
+                        
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                    print("->",self.arUsuarios.count)
+                    self.tbMiTable?.reloadData()
+                }
+        }
+       /* DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
             (snapshot) in
         print(snapshot)
             let arTemp=snapshot.value as? Array<AnyObject>
@@ -48,42 +93,10 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
     func dataHolderPruebaDataHolder(status: Int) {
         print("-------->>> ",status)
     }
-
-    override func didReceiveMemoryWarning() {
+    */
+        func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (DataHolder.sharedInstance.arUsuarios==nil) {
-            return 0
-        }
-        else{
-            return (DataHolder.sharedInstance.arUsuarios?.count)!;
-        }
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
-        
-        let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
-        cell.lblNombre?.text=usuarioi.sNombre
-        cell.descargarImagen(ruta: usuarioi.sRutaImagenP!)
-        //cell.lblNombre?.text="Yony"
-        /*if (indexPath.row==0) {
-            cell.lblNombre?.text="Yony"
-        }
-        else if (indexPath.row==1){
-            cell.lblNombre?.text="Javi"
-        }
-        else if (indexPath.row==2){
-            cell.lblNombre?.text="Victor"
-        }
-        else if (indexPath.row==3){
-            cell.lblNombre?.text="Nacho"
-        }
-        else if (indexPath.row==4){
-            cell.lblNombre?.text="Alvaro"
-        }*/
-        return cell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("HE SELECCIONADO LA POSICION: %d ",indexPath.row);
@@ -102,4 +115,5 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
     }
     */
 
+}
 }
