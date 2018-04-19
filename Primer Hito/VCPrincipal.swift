@@ -18,7 +18,8 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
         cell.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
-        cell.descargarImagen(ruta: arUsuarios[indexPath.row].sRutaImagenP!)
+        cell.lblEmail?.text = self.arUsuarios[indexPath.row].sEmail
+        cell.mostrarImagen(uri: self.arUsuarios[indexPath.row].sRutaImagenP!)
         /* let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
         cell.lblNombre?.text=usuarioi.sNombre
          */
@@ -39,6 +40,11 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
          cell.lblNombre?.text="Alvaro"
          }*/
         return cell;
+    }
+    func refreshUI() {
+        DispatchQueue.main.async (execute:{
+            self.tbMiTable?.reloadData()
+        })
     }
     @IBOutlet var tbMiTable:UITableView?
     var arUsuarios:[Usuario] = []
@@ -61,7 +67,8 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
                         print("\(document.documentID) => \(document.data())")
                     }
                     print("->",self.arUsuarios.count)
-                    self.tbMiTable?.reloadData()
+                    //self.tbMiTable?.reloadData()
+                    self.refreshUI()
                 }
         }
        /* DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {

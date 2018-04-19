@@ -15,7 +15,6 @@ class VCMapa: UIViewController, MKMapViewDelegate{
     
     @IBOutlet var miMapa:MKMapView?
     var pines:[String:MKAnnotation]? = [:]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         miMapa?.showsUserLocation = true
@@ -78,7 +77,7 @@ class VCMapa: UIViewController, MKMapViewDelegate{
     }
     
     func centralizarEnPosicion(coordenada:CLLocationCoordinate2D) {
-        let region:MKCoordinateRegion = MKCoordinateRegion(center:coordenada, span:MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05 ))
+        let region:MKCoordinateRegion = MKCoordinateRegion(center:coordenada, span:MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         miMapa?.setRegion(region, animated: true)
         
     }
