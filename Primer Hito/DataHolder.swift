@@ -19,7 +19,7 @@ class DataHolder: NSObject {
     var locationAdmin:LocationAdmin?
     var firDataBaseRef: DatabaseReference!
     var firStorage:Storage?
-    var arUsuarios:Array<Usuario>?
+    var arUsuarios:[Usuario] = []
     var firStorageRef:StorageReference?
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var sUsuario:String = ""
@@ -85,6 +85,8 @@ class DataHolder: NSObject {
         }
         delegate.dataHolderPruebaDataHolder!(status: 0)
     }
+    
+    
 }
 
 @objc protocol DataHolderDelegate{

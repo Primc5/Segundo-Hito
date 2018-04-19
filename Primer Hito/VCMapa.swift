@@ -19,23 +19,13 @@ class VCMapa: UIViewController, MKMapViewDelegate{
         super.viewDidLoad()
         miMapa?.showsUserLocation = true
         
-    DataHolder.sharedInstance.firDataBaseRef.child("Usuarios").observe(DataEventType.value, with: {
-            (snapshot) in
-            let arTemp=snapshot.value as? Array<AnyObject>
+        for usuario in DataHolder.sharedInstance.arUsuarios {
             
-            //if(DataHolder.sharedInstance.arUsuarios==nil){
-            DataHolder.sharedInstance.arUsuarios=Array<Usuario>()
-            //}
-            /*
-            for co in DataHolder.sharedInstance.arUsuario{
-                let usuario=Usuario()
-                var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
-                coordTemp.latitude = usuario.bLat!
-                coordTemp.longitude = usuario.bLong!
-                self.agregarPin(coordenada: coordTemp, titulo: usuario.sNombre!)
-            }
-            */
-        })
+            var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
+            coordTemp.latitude = usuario.bLat!
+            coordTemp.longitude = usuario.bLong!
+            self.agregarPin(coordenada: coordTemp, titulo: usuario.sNombre!)
+        }
         //miMapa?.delegate = self
         // Do any additional setup after loading the view.
         /*
@@ -77,7 +67,7 @@ class VCMapa: UIViewController, MKMapViewDelegate{
     }
     
     func centralizarEnPosicion(coordenada:CLLocationCoordinate2D) {
-        let region:MKCoordinateRegion = MKCoordinateRegion(center:coordenada, span:MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        let region:MKCoordinateRegion = MKCoordinateRegion(center:coordenada, span:MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         miMapa?.setRegion(region, animated: true)
         
     }

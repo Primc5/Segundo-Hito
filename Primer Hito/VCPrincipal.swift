@@ -12,14 +12,19 @@ import FirebaseDatabase
 import FirebaseFirestore
 
 class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate, DataHolderDelegate {
+    @IBOutlet var tbMiTable:UITableView?
+
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.arUsuarios.count
+            return DataHolder.sharedInstance.arUsuarios.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
-        cell.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
-        cell.lblEmail?.text = self.arUsuarios[indexPath.row].sEmail
-        cell.mostrarImagen(uri: self.arUsuarios[indexPath.row].sRutaImagenP!)
+        cell.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
+        cell.lblEmail?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sEmail
+        cell.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sRutaImagenP!)
         /* let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
         cell.lblNombre?.text=usuarioi.sNombre
          */
@@ -46,8 +51,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
             self.tbMiTable?.reloadData()
         })
     }
-    @IBOutlet var tbMiTable:UITableView?
-    var arUsuarios:[Usuario] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,17 +60,17 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    self.arUsuarios=[]
+                    DataHolder.sharedInstance.arUsuarios=[]
                     for document in querySnapshot!.documents {
                         
                         let usuario:Usuario = Usuario()
                         usuario.sID=document.documentID
                         usuario.setMap(valores: document.data())
-                        self.arUsuarios.append(usuario)
+                        DataHolder.sharedInstance.arUsuarios.append(usuario)
                         
                         print("\(document.documentID) => \(document.data())")
                     }
-                    print("->",self.arUsuarios.count)
+                    print("->",DataHolder.sharedInstance.arUsuarios.count)
                     //self.tbMiTable?.reloadData()
                     self.refreshUI()
                 }
