@@ -14,9 +14,6 @@ import FirebaseFirestore
 class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate, DataHolderDelegate {
     @IBOutlet var tbMiTable:UITableView?
 
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return DataHolder.sharedInstance.arUsuarios.count
     }

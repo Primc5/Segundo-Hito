@@ -37,7 +37,7 @@ class VCRegister: UIViewController {
         DataHolder.sharedInstance.usuario.sEmail = txtfEmail?.text
         DataHolder.sharedInstance.usuario.sNombre = txtfUsuario?.text
         DataHolder.sharedInstance.usuario.iFechNac = iFechaNac?.text
-        DataHolder.sharedInstance.usuario.sRutaImagenP = "Android.png"
+        DataHolder.sharedInstance.usuario.sRutaImagenP = "gs://primer-hito.appspot.com/Usuario.jpg"
         DataHolder.sharedInstance.usuario.bVerificado = true
         DataHolder.sharedInstance.usuario.bLat = Double("dLat?.text")
         DataHolder.sharedInstance.usuario.bLong = Double("dLong?.text")

@@ -16,7 +16,9 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
-        if (indexPath.row==0) {
+        cell.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
+        cell.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sRutaImagenP!)
+        /*if (indexPath.row==0) {
             cell.lblNombre?.text="Alberto"
             cell.imgvMain?.image=UIImage(named: "Android.png")
         }
@@ -35,22 +37,36 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         else if (indexPath.row==4){
             cell.lblNombre?.text="Alvaro"
             cell.imgvMain?.image=UIImage(named: "Apple.png")
-        }
+        }*/
         return cell;
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     @IBOutlet var colPrincipal:UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataHolder.sharedInstance.firStoreDB?.collection("Usuarios").whereField("Verificado", isEqualTo: true).addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                DataHolder.sharedInstance.arUsuarios=[]
+                for document in querySnapshot!.documents {
+                    
+                    let usuario:Usuario = Usuario()
+                    usuario.sID=document.documentID
+                    usuario.setMap(valores: document.data())
+                    DataHolder.sharedInstance.arUsuarios.append(usuario)
+                    
+                    print("\(document.documentID) => \(document.data())")
+                }
+                print("->",DataHolder.sharedInstance.arUsuarios.count)
+                //self.tbMiTable?.reloadData()
+            }
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -64,4 +80,5 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     */
 
+    }
 }
