@@ -12,13 +12,13 @@ import FirebaseFirestore
 
 class VCRegister: UIViewController {
     
-    @IBOutlet var txtfEmail:UITextField?
-    @IBOutlet var txtfUsuario:UITextField?
-    @IBOutlet var iFechaNac:UITextField?
-    @IBOutlet var txtfContraseña:UITextField?
-    @IBOutlet var txtfRepetirContraseña:UITextField?
-    @IBOutlet var dLat:UITextField?
-    @IBOutlet var dLong:UITextField?
+    @IBOutlet var txtfEmail:MiUITextField?
+    @IBOutlet var txtfUsuario:MiUITextField?
+    @IBOutlet var iFechaNac:MiUITextField?
+    @IBOutlet var txtfContraseña:MiUITextField?
+    @IBOutlet var txtfRepetirContraseña:MiUITextField?
+    @IBOutlet var dLat:MiUITextField?
+    @IBOutlet var dLong:MiUITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class VCRegister: UIViewController {
         iFechaNac?.text = DataHolder.sharedInstance.iFechNac
         dLat?.text = DataHolder.sharedInstance.dbLat
         dLong?.text = DataHolder.sharedInstance.dbLong
+        self.hideKeyBoardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 

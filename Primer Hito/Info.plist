@@ -22,6 +22,10 @@
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>MSG1</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>QUIERO ACCEDER A LA GALERIA</string>
+	<key>NSCameraUsageDescription</key>
+	<string>QUIERO USAR LA CAMARA</string>
 	<key>NSLocationUsageDescription</key>
 	<string>MSG3</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

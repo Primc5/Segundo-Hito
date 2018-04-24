@@ -34,7 +34,6 @@ class Usuario: NSObject {
         sRutaImagenP = valores[IDRutaImagenP] as? String
         iFechNac = valores[IDsFechaNacimiento] as? String
         bVerificado = valores[IDsFechaNacimiento] as? Bool
-        //print(sNombre)
     }
     func getMap () -> [String:Any]{
         var mapTemp:[String:Any] = [:]

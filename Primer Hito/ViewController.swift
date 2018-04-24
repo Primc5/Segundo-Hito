@@ -12,13 +12,14 @@ import FirebaseFirestore
 class ViewController: UIViewController {
 
     @IBOutlet var btnLogear:UIButton?
-    @IBOutlet var txtfUsuario:UITextField?
-    @IBOutlet var txtfContraseña:UITextField?
+    @IBOutlet var txtfUsuario:MiUITextField?
+    @IBOutlet var txtfContraseña:MiUITextField?
     @IBOutlet var txtfVConsola:UITextView?
     @IBOutlet var uiswitchRecordar:UISwitch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyBoardWhenTappedAround()
         // Do any additional setup after loading the view, typically from a nib.
         
         /*if (DataHolder.sharedInstance.sUsuario.isEmpty) {

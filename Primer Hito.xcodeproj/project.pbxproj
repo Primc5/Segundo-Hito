@@ -20,6 +20,8 @@
 		6563BD3620600B0A0071AA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6563BD3420600B0A0071AA41 /* LaunchScreen.storyboard */; };
 		6563BD3E206029620071AA41 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3D206029620071AA41 /* VCRegister.swift */; };
 		6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563BD3F20602C320071AA41 /* VCPrincipal.swift */; };
+		659B538D208F222200D8A838 /* VCSelectImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B538C208F222200D8A838 /* VCSelectImg.swift */; };
+		65D70AF5208E2F39000BC0DE /* MiUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D70AF4208E2F39000BC0DE /* MiUITextField.swift */; };
 		65E33496207CC494003B9405 /* Android.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33495207CC494003B9405 /* Android.png */; };
 		65E33498207CC49E003B9405 /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33497207CC49E003B9405 /* Apple.png */; };
 		65E3349A207CC4AD003B9405 /* Logo-U-Tad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E33499207CC4AD003B9405 /* Logo-U-Tad.png */; };
@@ -47,6 +49,8 @@
 		6563BD3720600B0A0071AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6563BD3D206029620071AA41 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 		6563BD3F20602C320071AA41 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
+		659B538C208F222200D8A838 /* VCSelectImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSelectImg.swift; sourceTree = "<group>"; };
+		65D70AF4208E2F39000BC0DE /* MiUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiUITextField.swift; sourceTree = "<group>"; };
 		65E33495207CC494003B9405 /* Android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Android.png; path = Assets.xcassets/Android.imageset/Android.png; sourceTree = "<group>"; };
 		65E33497207CC49E003B9405 /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Apple.png; path = Assets.xcassets/Apple.imageset/Apple.png; sourceTree = "<group>"; };
 		65E33499207CC4AD003B9405 /* Logo-U-Tad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo-U-Tad.png"; path = "Assets.xcassets/Logo-U-Tad.imageset/Logo-U-Tad.png"; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				65E54BEA206286EB00150813 /* LocationAdmin.swift */,
 				65E54BEE2063DC9B00150813 /* VCMapa.swift */,
 				6512A8482073E8DA0039DC3E /* Usuario.swift */,
+				65D70AF4208E2F39000BC0DE /* MiUITextField.swift */,
+				659B538C208F222200D8A838 /* VCSelectImg.swift */,
 			);
 			path = "Primer Hito";
 			sourceTree = "<group>";
@@ -292,11 +298,13 @@
 			files = (
 				6563BD2E20600B0A0071AA41 /* ViewController.swift in Sources */,
 				65E54BEF2063DC9B00150813 /* VCMapa.swift in Sources */,
+				659B538D208F222200D8A838 /* VCSelectImg.swift in Sources */,
 				65E54BEB206286EB00150813 /* LocationAdmin.swift in Sources */,
 				654DA767206159F800460BD6 /* CVCMiCelda2.swift in Sources */,
 				6563BD3E206029620071AA41 /* VCRegister.swift in Sources */,
 				6526A5F920617C6400A7FB6F /* DataHolder.swift in Sources */,
 				6563BD2C20600B0A0071AA41 /* AppDelegate.swift in Sources */,
+				65D70AF5208E2F39000BC0DE /* MiUITextField.swift in Sources */,
 				654DA76120612F3900460BD6 /* TVCMiCelda.swift in Sources */,
 				654DA7652061465900460BD6 /* VCColeccion.swift in Sources */,
 				6563BD4020602C320071AA41 /* VCPrincipal.swift in Sources */,

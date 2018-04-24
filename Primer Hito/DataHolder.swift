@@ -34,6 +34,7 @@ class DataHolder: NSObject {
         FirebaseApp.configure()
         firDataBaseRef = Database.database().reference()
         firStorage = Storage.storage()
+        firStorageRef = firStorage?.reference()
         firStoreDB=Firestore.firestore()
     }
     
@@ -78,6 +79,8 @@ class DataHolder: NSObject {
         hmImagenesDescargadas![clave]=image
     }
     
+    
+    
     func statusDataholder(delegate:DataHolderDelegate){
         var i = 0
         while i<1000000000 {
@@ -86,7 +89,16 @@ class DataHolder: NSObject {
         delegate.dataHolderPruebaDataHolder!(status: 0)
     }
     
-    
+}
+extension UIViewController{
+    func hideKeyBoardWhenTappedAround(){
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
 }
 
 @objc protocol DataHolderDelegate{

@@ -22,25 +22,7 @@ class VCPrincipal: UIViewController, UITableViewDataSource, UITableViewDelegate,
         cell.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
         cell.lblEmail?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sEmail
         cell.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sRutaImagenP!)
-        /* let usuarioi:Usuario=DataHolder.sharedInstance.arUsuarios![indexPath.row]
-        cell.lblNombre?.text=usuarioi.sNombre
-         */
-        //cell.lblNombre?.text="Yony"
-        /*if (indexPath.row==0) {
-         cell.lblNombre?.text="Yony"
-         }
-         else if (indexPath.row==1){
-         cell.lblNombre?.text="Javi"
-         }
-         else if (indexPath.row==2){
-         cell.lblNombre?.text="Victor"
-         }
-         else if (indexPath.row==3){
-         cell.lblNombre?.text="Nacho"
-         }
-         else if (indexPath.row==4){
-         cell.lblNombre?.text="Alvaro"
-         }*/
+        
         return cell;
     }
     func refreshUI() {

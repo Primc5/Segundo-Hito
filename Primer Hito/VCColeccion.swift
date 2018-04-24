@@ -18,26 +18,7 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
         cell.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
         cell.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sRutaImagenP!)
-        /*if (indexPath.row==0) {
-            cell.lblNombre?.text="Alberto"
-            cell.imgvMain?.image=UIImage(named: "Android.png")
-        }
-        else if (indexPath.row==1){
-            cell.lblNombre?.text="Javi"
-            cell.imgvMain?.image=UIImage(named: "Apple.png")
-        }
-        else if (indexPath.row==2){
-            cell.lblNombre?.text="Victor"
-            cell.imgvMain?.image=UIImage(named: "Android.png")
-        }
-        else if (indexPath.row==3){
-            cell.lblNombre?.text="Nacho"
-            cell.imgvMain?.image=UIImage(named: "Android.png")
-        }
-        else if (indexPath.row==4){
-            cell.lblNombre?.text="Alvaro"
-            cell.imgvMain?.image=UIImage(named: "Apple.png")
-        }*/
+        
         return cell;
     }
     
@@ -64,9 +45,8 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     print("\(document.documentID) => \(document.data())")
                 }
                 print("->",DataHolder.sharedInstance.arUsuarios.count)
-                //self.tbMiTable?.reloadData()
+                
             }
-        // Do any additional setup after loading the view.
     }
     
 

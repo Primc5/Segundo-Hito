@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MiUITextField: UITextField {
+class MiUITextField: UITextField, UITextFieldDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,5 +17,16 @@ class MiUITextField: UITextField {
         // Drawing code
     }
     */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        delegate=self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.resignFirstResponder()
+        
+        return false
+    }
 }
